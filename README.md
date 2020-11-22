@@ -17,3 +17,12 @@ I haven't used it for a year or two, so I want to shake off the rust and check o
 - By Brian W. Kernighan and Dennis M. Ritchie
 - [Second Edition: ANSI C](https://www.goodreads.com/book/show/515601.The_C_Programming_Language?ac=1&from_search=true&qid=SEScI7KLN9&rank=1)
 
+
+## Typescript
+
+Potentially starting a new project and want to dive into Typescript before getting started. I'll go through the docs and getting started section to play around with it.
+
+2020-11-21
+
+- [TypeScript Tooling in 5 Minutes](https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html)
+
