@@ -2,13 +2,15 @@ const { createReadStream, createWriteStream } = require("fs");
 const { mkdir, readdir, rmdir, stat, unlink } = require("fs").promises;
 const { createServer } = require("http");
 const mime = require("mime");
-const { resolve, sep } = require("path");
+const { join, resolve, sep } = require("path");
 const { parse } = require("url");
 
 const baseDirectory = process.cwd();
+
 const methods = Object.create(null);
 
 createServer((request, response) => {
+  console.log(request.method, request.url);
   let handler = methods[request.method] || notAllowed;
   handler(request)
     .catch((error) => {
@@ -22,12 +24,12 @@ createServer((request, response) => {
     });
 }).listen(8000);
 
-async function notAllowed(request) {
+const notAllowed = async function (request) {
   return {
     status: 405,
     body: `Method ${request.method} not allowed.`,
   };
-}
+};
 
 const urlPath = function (url) {
   let { pathname } = parse(url);
